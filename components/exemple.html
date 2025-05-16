@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slide from right with Tailwind & FontAwesome</title>
+  <link rel="stylesheet" href="../icons/css/all.css">
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("toggleBtn");
+      const slideContent = document.getElementById("slideContent");
+      const closeBtn = document.getElementById("closeBtn");
+
+      toggleBtn.addEventListener("click", () => {
+        // Affiche le contenu en retirant hidden et en lançant l'animation
+        slideContent.classList.remove("hidden");
+        // Forcer un reflow pour relancer la transition
+        void slideContent.offsetWidth;
+        slideContent.classList.remove("translate-x-full");
+        slideContent.classList.add("translate-x-0");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        // Cache le contenu en le faisant glisser vers la droite puis le cache
+        slideContent.classList.remove("translate-x-0");
+        slideContent.classList.add("translate-x-full");
+        // Après la durée de transition, on remet hidden pour ne plus afficher
+        setTimeout(() => {
+          slideContent.classList.add("hidden");
+        }, 300);
+      });
+    });
+  </script>
+  <script src="../styles/styles.js"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+  <div class="relative w-64">
+    <!-- Div clickable -->
+    <div id="toggleBtn" class="cursor-pointer bg-blue-600 text-white p-4 rounded shadow-md select-none">
+      Clique ici
+    </div>
+
+    <!-- Contenu caché par défaut -->
+    <div
+      id="slideContent"
+      class="absolute top-0 right-0 h-40 w-64 bg-white shadow-lg border rounded transform translate-x-full transition-transform duration-300 ease-in-out hidden"
+    >
+      <button
+        id="closeBtn"
+        class="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+        aria-label="Fermer"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="p-4 mt-8 text-gray-800">
+        <p>Contenu qui apparaît depuis la droite.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
