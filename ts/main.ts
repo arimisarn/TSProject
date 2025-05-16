@@ -12,6 +12,20 @@ async function loadHeader() {
 }
 loadHeader()
 
+async function loadHeaderMain() {
+    try{
+        const response = await fetch ("../components/header.html")
+        const data =await response.text()
+        const headerElement = document.getElementById("headerMain")
+        if(headerElement){
+            headerElement.innerHTML = data
+        }
+    } catch(error){
+        console.error('erreur lors du chargement')
+    }
+}
+loadHeaderMain()
+
 async function loadMain() {
     try{
         const response = await fetch ("../components/mainIndex.html")

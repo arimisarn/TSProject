@@ -6,37 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TsProject | Register</title>
     <link rel="stylesheet" href="./icons/css/all.css">
-    <link rel="stylesheet" href="../styles/tailwind.min.css">
-    <script src="./styles/styles.js"></script>
+    <link rel="stylesheet" href="./styles/tailwind.min.css">
 </head>
 
 <body class="bg-gray-100 h-screen flex items-center justify-center">
-
     <div class="bg-white p-8 rounded-md shadow-md w-full max-w-md">
         <h2 class="text-2xl font-semibold mb-6 text-gray-800 text-center">Inscription</h2>
-
-        <form class="space-y-4">
+        <form class="space-y-4" id="registrationForm">
             <div>
                 <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Nom</label>
                 <input type="text" id="nom"
                     class=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Votre nom">
             </div>
-
             <div>
                 <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
                 <input type="email" id="email"
                     class=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Votre adresse email">
             </div>
-
             <div>
                 <label for="motdepasse" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe</label>
                 <input type="password" id="motdepasse"
                     class=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Votre mot de passe">
             </div>
-
             <div>
                 <label for="confirm_motdepasse" class="block text-gray-700 text-sm font-bold mb-2">Confirmer le mot de
                     passe</label>
@@ -44,20 +38,21 @@
                     class=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Confirmer votre mot de passe">
             </div>
-
             <div class="flex flex-col items-center justify-between">
                 <button
                     class="bg-indigo-700 w-full hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline"
-                    type="submit">
+                    type="submit" id="submitButton">
                     S'inscrire
                 </button>
-                <a class="inline-block align-baseline font-semibold text-sm mt-4 text-indigo-500 hover:text-indigo-800" href="login.html">
+                <a class="inline-block align-baseline font-semibold text-sm mt-4 text-indigo-500 hover:text-indigo-800"
+                    href="login.html">
                     Déjà un compte ?
                 </a>
             </div>
         </form>
     </div>
-
+    <script src="../dist/register.js"></script>
+    <script src="../styles/styles.js"></script>
 </body>
 
 </html>

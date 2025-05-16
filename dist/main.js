@@ -24,6 +24,22 @@ function loadHeader() {
     });
 }
 loadHeader();
+function loadHeaderMain() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch("../components/header.html");
+            const data = yield response.text();
+            const headerElement = document.getElementById("headerMain");
+            if (headerElement) {
+                headerElement.innerHTML = data;
+            }
+        }
+        catch (error) {
+            console.error('erreur lors du chargement');
+        }
+    });
+}
+loadHeaderMain();
 function loadMain() {
     return __awaiter(this, void 0, void 0, function* () {
         try {

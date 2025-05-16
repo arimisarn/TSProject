@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TsProject</title>
+    <link rel="stylesheet" href="./icons/css/all.css">
+    <script src="./styles/styles.js"></script>
+      <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("toggleBtn");
+      const slideContent = document.getElementById("slideContent");
+      const closeBtn = document.getElementById("closeBtn");
+
+      toggleBtn.addEventListener("click", () => {
+        // Affiche le contenu en retirant hidden et en lançant l'animation
+        slideContent.classList.remove("hidden");
+        // Forcer un reflow pour relancer la transition
+        void slideContent.offsetWidth;
+        slideContent.classList.remove("translate-x-full");
+        slideContent.classList.add("translate-x-0");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        // Cache le contenu en le faisant glisser vers la droite puis le cache
+        slideContent.classList.remove("translate-x-0");
+        slideContent.classList.add("translate-x-full");
+        // Après la durée de transition, on remet hidden pour ne plus afficher
+        setTimeout(() => {
+          slideContent.classList.add("hidden");
+        }, 300);
+      });
+    });
+
+  </script>
+</head>
+
+<body class="bg-gray-100">
+    <div id="headerMain"></div>
+<div class="flex w-[90%] m-auto mt-6 justify-around flex-wrap h-screen bg-gray-100">
+
+  <div class="relative w-64">
+    <!-- Div clickable -->
+
+    <div id="toggleBtn" class="w-full rounded shadow text-gray-400 bg-white">
+      <img class="w-full h-48 rounded-t" src="/images/491290126_1224093999725744_1693348584644323879_n.jpg" alt="">
+      <div class="p-4 flex flex-col gap-2">
+        <p class="text-3xl text-violet-800 font-semibold text-center">Titre du Livre</p>
+        <p class="text-black font-semibold">Auteur : <span class="text-gray-500 font-normal">Nom d'auteur</span></p>
+        <p class="text-black font-semibold">Publié le : <span class="text-gray-500 font-normal">Monday 01 Mois 2025 at
+            00h00m AMr</span></p>
+      </div>
+    </div>
+
+    <!-- Contenu caché par défaut -->
+    <div id="slideContent"
+      class="absolute top-0 right-0 h-40 w-64 bg-white shadow-lg rounded transform translate-x-full transition-transform duration-300 ease-in-out hidden">
+      <button id="closeBtn" class="absolute top-2 right-2 text-gray-600 hover:text-red-600" aria-label="Fermer">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="p-4 text-gray-800 text-center flex flex-col gap-3">
+        <p class="text-xl text-violet-800 font-semibold">Description du livre</p>
+
+        <p class="text-sm" id="description"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates,
+          quaerat! </p>
+      </div>
+    </div>
+  </div>
+
+</div>    <div id="footer"></div>
+    <script src="../dist/main.js"></script>
+    <script src="../styles/styles.js"></script>
+</body>
+
+</html>
