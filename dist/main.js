@@ -43,7 +43,7 @@ loadHeaderMain();
 function loadMain() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch("../components/mainIndex.html");
+            const response = yield fetch("../components/main.html");
             const data = yield response.text();
             const headerElement = document.getElementById("main");
             if (headerElement) {

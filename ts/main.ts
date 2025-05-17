@@ -28,7 +28,7 @@ loadHeaderMain()
 
 async function loadMain() {
     try{
-        const response = await fetch ("../components/mainIndex.html")
+        const response = await fetch ("../components/main.html")
         const data =await response.text()
         const headerElement = document.getElementById("main")
         if(headerElement){

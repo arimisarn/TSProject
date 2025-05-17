@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un livre</title>
+    <link rel="stylesheet" href="./icons/css/all.css">
+    <link rel="stylesheet" href="../styles/tailwind.min.css">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto">
+        <h1 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Ajouter un nouveau livre</h1>
+        <form id="addBookForm" class="space-y-4">
+            <div>
+                <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Titre du livre:</label>
+                <input type="text" id="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <div id="title-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+            </div>
+            <div>
+                <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description du livre:</label>
+                <textarea id="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                 <div id="description-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+            </div>
+            <button type="submit" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+                Ajouter un livre
+            </button>
+        </form>
+    </div>
+
+    <script src="../dist/add-book.js"></script>
+</body>
+</html>
