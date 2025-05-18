@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
         allBooksList.style.display = "block";
         livres.forEach((livre: any) => {
             const livreDiv = document.createElement('div');
-            livreDiv.classList.add('border', 'rounded-md', 'p-4', 'shadow-sm');
+            livreDiv.classList.add('border' ,'border-gray-100', 'mt-4', 'rounded-md', 'p-4', 'shadow-sm');
             livreDiv.innerHTML = `
-                    <div class="p-4 flex flex-col gap-2">
-
-<p class="text-3xl text-violet-800 font-semibold text-center"> ${livre.titre} </p>
-        <p class="text-black font-semibold">Description : <span class="text-gray-500 font-normal"> ${livre.description} </span></p>
-        <p class="text-black font-semibold">Auteur : <span class="text-gray-500 font-normal"> ${livre.auteur} </span></p>
-        <p class="text-black font-semibold">Publié le : <span class="text-gray-500 font-normal"> ${livre.dateDePublication} </span></p>
+                    <div class="p-4 flex justify-between items-center gap-2">
+                        <p class="text-3xl text-violet-800 font-semibold text-center"> ${livre.titre} </p>
+                        <p class="text-black font-semibold">Description : <span class="text-gray-500 font-normal"> ${livre.description} </span></p>
+                        <p class="text-black font-semibold">Auteur : <span class="text-gray-500 font-normal"> ${livre.auteur} </span></p>
+                        <p class="text-black font-semibold">Publié le : <span class="text-gray-500 font-normal"> ${livre.dateDePublication} </span></p>
                     </div>
 `;
             allBooksList.appendChild(livreDiv);
