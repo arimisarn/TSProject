@@ -52,7 +52,7 @@
                 localStorage.setItem('user', JSON.stringify(user));
                 alert('Inscription réussie ! Vous allez être redirigé vers la page de connexion.');
 
-                // Redirige vers la page de connexion après un court délai
+                // Redirige vers la page de connexion après 1.5 s
                 setTimeout(() => {
                     window.location.href = 'login.html';
                 }, 1500);

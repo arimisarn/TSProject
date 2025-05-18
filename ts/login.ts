@@ -6,7 +6,7 @@
 
         if (loginForm && emailInput && motdepasseInput && loginButton) {
             loginForm.addEventListener('submit', (event) => {
-                event.preventDefault(); // Empêche la soumission par défaut
+                event.preventDefault();
 
                 const email = emailInput.value.trim();
                 const motdepasse = motdepasseInput.value.trim();

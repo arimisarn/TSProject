@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     userLivres.splice(index, 1);
 
                     // Mettre à jour le tableau des livres dans le localStorage
-                    // Nous devons mettre à jour la liste complète des livres, pas seulement les livres de l'utilisateur actuel.
                     const tousLesLivresData = localStorage.getItem('livres');
                     let tousLesLivres: any[] = tousLesLivresData ? JSON.parse(tousLesLivresData) : [];
                     // Trouver l'index du livre à supprimer dans le tableau complet
